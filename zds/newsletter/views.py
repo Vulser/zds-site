@@ -11,9 +11,8 @@ def add_newsletter(request):
     if request.method == 'POST':
         form = NewsletterForm(request.POST)
         my_ip = get_client_ip(request)
-        already = Newsletter.objects.filter(ip=my_ip).count()
 
-        if form.is_valid() and already == 0:
+        if form.is_valid():
             data = form.data
             print data['email']
             nl = Newsletter()
@@ -24,8 +23,9 @@ def add_newsletter(request):
             return render_template('newsletter/confirm.html')
 
         else:
-            # TODO: add errors to the form and return it
-            return render_template('newsletter/failed.html')
+            return render_template('newsletter/new_newsletter.html', {
+                'form': form
+            })
     else:
         form = NewsletterForm()
         return render_template('newsletter/new_newsletter.html', {

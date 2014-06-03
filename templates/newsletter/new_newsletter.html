@@ -45,12 +45,17 @@
 					<p class="register">
 						S'inscrire à la newsletter pour être averti des nouveautés
 					</p>
+					
+					{% if error %}
+          		{{ error }}
+          {% endif %}
 
 					{% crispy form %}
 
 					<p class="email-note">
 						Votre adresse email ne sera utilisée que pour vous envoyer notre newsletter, rien d'autre
 					</p>
+				
 				</section>
 
 				<section class="social">
