@@ -2,7 +2,10 @@
 
 from datetime import datetime
 from git.repo import Repo
-import json
+try:
+    import simplejson as json
+except ImportError:
+    import json
 import os
 
 import factory

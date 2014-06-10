@@ -1,7 +1,10 @@
 # coding: utf-8
 
 from math import ceil
-import json
+try:
+    import simplejson as json
+except ImportError:
+    import json
 import os
 
 from django.conf import settings

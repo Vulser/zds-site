@@ -20,7 +20,10 @@ from django.shortcuts import redirect, get_object_or_404, render_to_response
 from django.template import Context, RequestContext
 from django.template.loader import get_template
 from django.views.decorators.http import require_POST
-import json
+try:
+    import simplejson as json
+except ImportError:
+    import json
 import pygal
 
 from forms import LoginForm, MiniProfileForm, ProfileForm, RegisterForm, \

@@ -4,7 +4,10 @@ from cStringIO import StringIO
 from django.conf import settings
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.db import models
-import json
+try:
+    import simplejson as json
+except ImportError:
+    import json
 from math import ceil
 import os
 import string

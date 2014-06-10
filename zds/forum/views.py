@@ -1,7 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 from datetime import datetime
-import json
+try:
+    import simplejson as json
+except ImportError:
+    import json
 import re
 
 from django.conf import settings

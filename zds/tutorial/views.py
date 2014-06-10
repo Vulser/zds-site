@@ -5,7 +5,10 @@ from datetime import datetime
 from operator import attrgetter
 from urllib import urlretrieve
 from urlparse import urlparse
-import json
+try:
+    import simplejson as json
+except ImportError:
+    import json
 import os.path
 import re
 import shutil

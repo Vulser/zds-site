@@ -3,7 +3,10 @@
 from datetime import datetime
 import factory
 from git.repo import Repo
-import json
+try:
+    import simplejson as json
+except ImportError:
+    import json
 import os
 from zds.article.models import Article, Reaction, \
     Validation
